@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- 通过Spring HttpInvoker机制暴露远程访问服务 -->
+	
+  
+    <bean id="iCartService" class="com.mmall.service.impl.CartServiceImpl" />
+    <bean name="/iCartService.s" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+       <property name="service" ref="iCartService" />
+       <property name="serviceInterface" value="com.mmall.service.ICartService" />
+    </bean>
+    
+    <bean id="iCategoryService" class="com.mmall.service.impl.CategoryServiceImpl" />
+    <bean name="/iCategoryService.s" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+       <property name="service" ref="iCategoryService" />
+       <property name="serviceInterface" value="com.mmall.service.ICategoryService" />
+    </bean>
+    
+    <bean id="iFileService" class="com.mmall.service.impl.FileServiceImpl" />
+    <bean name="/iFileService.s" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+       <property name="service" ref="iFileService" />
+       <property name="serviceInterface" value="com.mmall.service.IFileService" />
+    </bean>   
+   
+   
+    <bean id="iOrderService" class="com.mmall.service.impl.OrderServiceImpl" />
+    <bean name="/iOrderService.s" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+       <property name="service" ref="iOrderService" />
+       <property name="serviceInterface" value="com.mmall.service.IOrderService" />
+    </bean>    
+
+    <bean id="iProductService" class="com.mmall.service.impl.ProductServiceImpl" />
+    <bean name="/iProductService.s" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+       <property name="service" ref="iProductService" />
+       <property name="serviceInterface" value="com.mmall.service.IProductService" />
+    </bean>   
+    
+        
+    <bean id="iShippingService" class="com.mmall.service.impl.ShippingServiceImpl" />
+    <bean name="/iShippingService.s" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+       <property name="service" ref="iShippingService" />
+       <property name="serviceInterface" value="com.mmall.service.IShippingService" />
+    </bean>   
+    
+    
+    <bean id="iUserService" class="com.mmall.service.impl.UserServiceImpl" />
+    <bean name="/iUserService.s" class="org.springframework.remoting.httpinvoker.HttpInvokerServiceExporter">
+       <property name="service" ref="iUserService" />
+       <property name="serviceInterface" value="com.mmall.service.IUserService" />
+    </bean>   
+</beans>
+
+
